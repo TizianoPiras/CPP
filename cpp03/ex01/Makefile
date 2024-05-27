@@ -1,6 +1,39 @@
-all:
-	c++ -Werror -Wextra -Wall -std=c++98  main.cpp ClapTrap.cpp ScavTrap.cpp -o ScavTrap
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/23 13:41:01 by ertiz             #+#    #+#              #
+#    Updated: 2024/05/23 13:41:42 by ertiz            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-fclean:
-	rm -f *.o
-	rm -f claptrap
+
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
+
+OBJ = $(SRC:.cpp=.o)
+
+CC = g++
+
+RM = rm -f
+
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
+
+NAME = ScavTrap
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) $(OBJ)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

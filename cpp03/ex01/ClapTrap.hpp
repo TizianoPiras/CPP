@@ -1,33 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/20 12:46:58 by ertiz             #+#    #+#             */
+/*   Updated: 2024/05/27 12:35:47 by ertiz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#define CLAPTRA_HPP
 
 #include <iostream>
 
 class ClapTrap{
 
-    protected:
-        std::string name;
-        int         hitPoints;
-        int         energyPoints;
-        int         attackDamage;
-    public:
+		protected:
+			std::string _name;
+			int         _hitPoints;
+			int         _energyPoints;
+			int         _attackDamage;
 
-        ClapTrap();
-        ClapTrap(std::string name);
-        ~ClapTrap();
-        ClapTrap(const ClapTrap &other);
-        std::string getName();
-        int         getHitPoints();
-        int         getEnergyPoints();
-        int         getAttackDamage();
-        
-        void        setEnergyPoints(int amount, bool increse);
-        void        setHitPoints(int amount, bool increse);
-        void        attack(const std::string& target);
-        void        takeDamage(unsigned int amount);
-        void        beRepaired(unsigned int amount);
-
-        ClapTrap    &operator=(const ClapTrap &Copy);
+		public:
+			ClapTrap();
+			~ClapTrap();
+			ClapTrap(std::string x);
+			ClapTrap(const ClapTrap &copy);
+			ClapTrap &operator=(const ClapTrap &copy);
+			virtual void attack(const std::string &target);
+			void takeDamage(unsigned int amount);
+			void beRepaired(unsigned int amount);          
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif

@@ -1,26 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/20 12:46:37 by ertiz             #+#    #+#             */
+/*   Updated: 2024/05/23 13:49:53 by ertiz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 
 
 int	main()
 {
-	std::cout << "---- CLAPTRAP MAIN ----\n" << std::endl;
+	ClapTrap ClapA("ClapA");
 
-	ClapTrap	ClaptrapA("ClaptrapA");
-
-	ClapTrap	ClaptrapB("ClaptrapB");
-	//ClapTrap    ClapTrapC(ClaptrapA);
-//
-	
-	ClaptrapA.attack(ClaptrapB.getName());
-	//std::cout << ClaptrapA.getName() << std::endl; 
-	//ClaptrapA.setEnergyPoints(2, false);
-	//std::cout << ClapTrapC.getName() << std::endl; 
-	//std::cout << ClaptrapA.getEnergyPoints() << std::endl; 
-	//std::cout << ClapTrapC.getEnergyPoints() << std::endl; 
-    
-	 
-
+	ClapA.takeDamage(5);
+	ClapA.beRepaired(3);
+	ClapA.attack("Marvin");
+	ClapA.takeDamage(8);
 
 }
 

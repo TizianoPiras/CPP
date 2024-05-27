@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/20 12:47:08 by ertiz             #+#    #+#             */
+/*   Updated: 2024/05/27 12:24:47 by ertiz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
+#include <iostream>
 #include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap{
 
-    public:
-        ScavTrap(std::string x);
-        ~ScavTrap();
-        void    guardGate();
+	public:
+		ScavTrap();
+		~ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &copy);
+		ScavTrap &operator=(const ScavTrap &copy);
+		void	attack(const std::string &target);
+		void    guardGate();
 };
-
-
-
-
-
 
 
 
