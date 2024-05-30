@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:07:34 by ertiz             #+#    #+#             */
-/*   Updated: 2024/05/23 13:36:11 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/05/30 12:31:16 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,3 @@ void Fixed::setRawBits(const int rawBits){
     this->_fixedPointValue = rawBits;
     std::cout << "setRawBits member function is called, and the value is setted to " << this->_fixedPointValue << std::endl;
 }
-
-
-
-

@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:10:18 by ertiz             #+#    #+#             */
-/*   Updated: 2024/05/23 12:10:20 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/05/30 12:29:58 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,53 +15,47 @@
 
 Fixed::Fixed(void)
 {
-   // std::cout<< "Default constructor called" << std::endl;
+	std::cout<< "Default constructor called" << std::endl;
     this->_fixedp = 0;
-    return;
-
 }
 
 Fixed::Fixed( const float nbr)
 {
-	//std::cout << "Float to fixed constructor called" << std::endl;
+	std::cout << "Float to fixed constructor called" << std::endl;
 	this->_fixedp = roundf(nbr * (1 << this->_bits_nbr));
 }
 
 Fixed::Fixed(const int nbr)
 {
-	//std::cout << "Int to fixed constructor called" << std::endl;
+	std::cout << "Int to fixed constructor called" << std::endl;
 	this->_fixedp = nbr << this->_bits_nbr;
 }
 
 int Fixed::getRawBits() const
 {
-	//std::cout << "getRawBits member function called" << std::endl;
-
+	std::cout << "getRawBits member function called" << std::endl;
     return (this->_fixedp);
 }
 
 void Fixed::setRawBits(int const raw)
 {
    this-> _fixedp = raw;
-   return;
 }
 
 Fixed::Fixed(const Fixed &cpy)
 {
-	//std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
     this->_fixedp = cpy.getRawBits();
-    return;
 }
 
 Fixed::~Fixed()
 {
-        //std::cout<< "Deconstractor called" << std::endl;
-        return;
+    std::cout<< "Deconstractor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(Fixed const& cpy)
 {
-	//std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
     if(this==&cpy)
         return*(this);
      this->_fixedp=cpy.getRawBits();

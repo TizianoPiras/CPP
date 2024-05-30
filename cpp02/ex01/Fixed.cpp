@@ -6,14 +6,13 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:09:58 by ertiz             #+#    #+#             */
-/*   Updated: 2024/05/23 12:10:01 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/05/30 12:30:30 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-    : _valueFixedPoint (0)
+Fixed::Fixed(): _valueFixedPoint(0)
 {
     std::cout << "Default costructor called" << std::endl;
 }
