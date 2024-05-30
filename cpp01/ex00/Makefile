@@ -6,7 +6,7 @@
 #    By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 14:16:43 by ertiz             #+#    #+#              #
-#    Updated: 2024/05/27 14:04:15 by ertiz            ###   ########.fr        #
+#    Updated: 2024/05/30 14:18:55 by ertiz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
-SRCS = main.cpp Zombie.cpp 
+SRCS = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

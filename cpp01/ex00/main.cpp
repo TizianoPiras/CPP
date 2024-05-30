@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:35:26 by ertiz             #+#    #+#             */
-/*   Updated: 2024/05/27 14:04:10 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/05/30 14:17:59 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	Zombie *heapZombie = NewZombie("Zombie on heap mem");
+	Zombie *heapZombie = newZombie("Zombie on heap mem");
 	Zombie voidZombie("");
 
 	voidZombie.announce();
