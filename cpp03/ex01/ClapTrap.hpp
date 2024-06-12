@@ -6,12 +6,12 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:46:58 by ertiz             #+#    #+#             */
-/*   Updated: 2024/05/27 12:35:47 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/06/10 13:06:20 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
-#define CLAPTRA_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 

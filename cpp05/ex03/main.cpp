@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:51:21 by ertiz             #+#    #+#             */
-/*   Updated: 2024/05/20 12:51:22 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/06/12 12:24:17 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
     Internal prova;
     AForm *refForm;
 
-    refForm = prova.makeForm("shrubberry creation", "Pluto");
+    refForm = prova.makeForm("presidential pardon", "Pluto");
     prova.execute(Pluto);
     if (refForm)
     {

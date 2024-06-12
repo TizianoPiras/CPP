@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 13:03:17 by ertiz             #+#    #+#             */
-/*   Updated: 2024/06/11 12:24:30 by ertiz            ###   ########.fr       */
+/*   Created: 2024/06/12 14:14:27 by ertiz             #+#    #+#             */
+/*   Updated: 2024/06/12 17:11:04 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 # include <iostream>
-# include <string>
 # include <cmath>
 # include <cstdlib>
 # include <sstream>
@@ -22,19 +21,27 @@
 # include <cerrno>
 # include <iomanip>
 
-class ScalarConverter {
-		private:
-			;
-		public:
-			ScalarConverter();
-			ScalarConverter(const ScalarConverter &copy);
-			ScalarConverter &operator=(const ScalarConverter & copy);
-			~ScalarConverter();
-			static void		converter(std::string &obj);
-			static void		strToc(char c);
-			static void		strToi(double obj);
-			static void		strTof(double obj);
-			static void		strTod(double obj);
+template<typename T>
+class Array{
+	private:
+			T	*_array;
+			unsigned int _size;
+	public:
+			Array();
+			Array(unsigned int n);
+			Array(const Array &copy);
+			~Array();
+			Array &operator=(const Array &copy);
+			T &operator[](unsigned int n);
+			unsigned int size(void);
+			class OversizeIndex: public std::exception 
+			{
+				public:
+					const char  *what() const throw(){
+						return ("Oversize");
+					}
+			};
 };
 
+#include "Array.tpp"
 #endif
