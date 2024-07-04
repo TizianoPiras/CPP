@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 12:30:44 by ertiz             #+#    #+#             */
-/*   Updated: 2024/07/04 12:45:17 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/07/04 13:26:18 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void PmergeMe<Container>::insertionSort(Container& container) {
     if (container.size() <= 1)
         return;
 
-    for (auto it = std::next(container.begin()); it != container.end(); ++it) {
+    for (typename Container::iterator it = std::next(container.begin()); it != container.end(); ++it) {
+        std::cout << "Insertion Sorting" << std::endl;
         int key = *it;
         typename Container::iterator j = it;
         int idx = std::distance(container.begin(), it);
@@ -56,6 +57,7 @@ void PmergeMe<Container>::merge(Container& left, Container& right, Container& re
     typename Container::iterator it_left = left.begin();
     typename Container::iterator it_right = right.begin();
 
+    std::cout << "Merge" << std::endl;
     while (it_left != left.end() && it_right != right.end()) {
         if (*it_left <= *it_right) {
             result.push_back(*it_left);
@@ -80,9 +82,11 @@ void PmergeMe<Container>::merge(Container& left, Container& right, Container& re
 // Merge-Insertion Sort for generic container
 template <typename Container>
 void PmergeMe<Container>::mergeInsertionSort(Container& container) {
+    std::cout << "Merge & Insertion Sorting" << std::endl;
     if (container.size() <= 1)
         return;
-
+    if (container.size() <= 10)
+        insertionSort(container);
     Container left, right;
     typename Container::iterator it = container.begin();
     std::advance(it, container.size() / 2);
