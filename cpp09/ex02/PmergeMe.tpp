@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 12:30:44 by ertiz             #+#    #+#             */
-/*   Updated: 2024/07/04 13:26:18 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/07/04 13:58:47 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@
 template <typename Container>
 // Jacobson index function
 int PmergeMe<Container>::jacobsonIndex(int i) {
-    return std::max(0, static_cast<int>((std::pow(2, i - 1) + std::pow(-1, i)) / 3));
+    int idx = std::max(0, static_cast<int>((std::pow(2, i - 1) + std::pow(-1, i)) / 3));
+    std::cout << "jacobsonIndex(" << i << ") = " << idx << std::endl;  // Debug print
+    return idx;
 }
 
 // Insertion sort for generic container using Jacobson index
@@ -31,7 +33,6 @@ void PmergeMe<Container>::insertionSort(Container& container) {
         return;
 
     for (typename Container::iterator it = std::next(container.begin()); it != container.end(); ++it) {
-        std::cout << "Insertion Sorting" << std::endl;
         int key = *it;
         typename Container::iterator j = it;
         int idx = std::distance(container.begin(), it);
@@ -40,6 +41,9 @@ void PmergeMe<Container>::insertionSort(Container& container) {
         std::advance(jcb_it, jacobsonIdx);
 
         while (j != container.begin() && jcb_it != container.end() && *jcb_it > key) {
+            std::cout << "key = " << key << ", j = " << std::distance(container.begin(), j) 
+                    << ", jcb_it = " << std::distance(container.begin(), jcb_it) << std::endl;  // Debug print
+
             *j = *jcb_it;
             j = jcb_it;
             idx = std::distance(container.begin(), j);
@@ -47,6 +51,7 @@ void PmergeMe<Container>::insertionSort(Container& container) {
             jcb_it = container.begin();
             std::advance(jcb_it, jacobsonIdx);
         }
+        std::cout << "Insertion Sorting " << key << std::endl;
         *j = key;
     }
 }
@@ -85,7 +90,7 @@ void PmergeMe<Container>::mergeInsertionSort(Container& container) {
     std::cout << "Merge & Insertion Sorting" << std::endl;
     if (container.size() <= 1)
         return;
-    if (container.size() <= 10)
+    if (container.size() <= 5)
         insertionSort(container);
     Container left, right;
     typename Container::iterator it = container.begin();
