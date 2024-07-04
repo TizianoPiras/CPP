@@ -6,7 +6,7 @@
 #    By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/18 14:03:16 by ertiz             #+#    #+#              #
-#    Updated: 2024/06/25 20:42:50 by ertiz            ###   ########.fr        #
+#    Updated: 2024/07/04 12:37:37 by ertiz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp PmergeMe.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

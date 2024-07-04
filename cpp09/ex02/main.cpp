@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 12:31:04 by ertiz             #+#    #+#             */
-/*   Updated: 2024/06/26 15:03:32 by ertiz            ###   ########.fr       */
+/*   Updated: 2024/07/04 12:34:35 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,22 @@ int main(int argc, char* argv[]) {
 	}
 
 	std::cout << "Before: ";
-	for (int num : vec) {
+	for (int num : lst) {
 		std::cout << num << " ";
 	}
 	std::cout << std::endl;
 
 	clock_t startVec = clock();
-	PmergeMe::mergeInsertionSortVector(vec, 0, vec.size() - 1);
+	PmergeMe<std::vector<int>>::mergeInsertionSort(vec);
 
 	clock_t endVec = clock();
 
 	clock_t startList = clock();
-	PmergeMe::mergeInsertionSortList(lst);
+	PmergeMe<std::list<int>>::mergeInsertionSort(lst);
 	clock_t endList = clock();
 
 	std::cout << "After: ";
-	for (int num : vec) {
+	for (int num : lst) {
 		std::cout << num << " ";
 	}
 	std::cout << std::endl;
